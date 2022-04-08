@@ -10,7 +10,7 @@
 }
 
 .node-start {
-  background-color: green;
+  background-color: green; 
 }
 
 .node-visited {
@@ -76,4 +76,5 @@
     transform: scale(1);
     background-color: rgb(255, 254, 106);
   }
+
 }

@@ -36,7 +36,8 @@ export default class Node extends Component {
         onDoubleClick={() => onDoubleClick(row, col)}
         draggable={true}
         // onContextMenu={() => onContextMenu(row, col)}
-      ></div>
+      >
+      </div>
     );
   }
 }

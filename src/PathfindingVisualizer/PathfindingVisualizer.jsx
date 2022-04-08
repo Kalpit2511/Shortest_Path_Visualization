@@ -3,7 +3,6 @@ import Node from './Node/Node';
 import { dijkstra, getNodesInShortestPathOrder } from '../algorithms/dijkstra';
 import { astar, getNodesInOrder } from '../algorithms/astar';
 import HeaderMenu, { name, nameNode } from './HeaderMenu';
-// import NodeDrop, { name1 } from './NodeDrop';
 
 import './PathfindingVisualizer.css';
 
@@ -72,8 +71,8 @@ export default class PathfindingVisualizer extends Component {
   }
 
   animateDijkstra(visitedNodesInOrder, nodesInShortestPathOrder) {
-    for (let i = 0; i <= visitedNodesInOrder.length; i++) {
-      if (i === visitedNodesInOrder.length) {
+    for (let i = 1; i <= visitedNodesInOrder.length-1; i++) {
+      if (i === visitedNodesInOrder.length-1) {
         setTimeout(() => {
           this.animateShortestPath(nodesInShortestPathOrder);
         }, 10 * i);
@@ -88,7 +87,7 @@ export default class PathfindingVisualizer extends Component {
   }
 
   animateShortestPath(nodesInShortestPathOrder) {
-    for (let i = 0; i < nodesInShortestPathOrder.length; i++) {
+    for (let i = 1; i < nodesInShortestPathOrder.length-1; i++) {
       setTimeout(() => {
         const node = nodesInShortestPathOrder[i];
         document.getElementById(`node-${node.row}-${node.col}`).className =
@@ -135,7 +134,7 @@ export default class PathfindingVisualizer extends Component {
               this.visualizeAstar();
             }
           }}>
-          Visualize Dijkstra's Algorithm
+          Visualize Algorithm
         </button>
         
         <div className="grid">
@@ -167,6 +166,7 @@ export default class PathfindingVisualizer extends Component {
             );
           })}
         </div>
+       
       </>
     );
   }
