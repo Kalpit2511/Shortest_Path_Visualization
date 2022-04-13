@@ -32,7 +32,7 @@ export function getNodesInOrder(finishNode) {
 }
 // Function of closestNode - to sort the nodes by distance
 function sortNodesByDistance(unvisitedNodes) {
-  console.log(unvisitedNodes);
+  // console.log(unvisitedNodes);
   let index, currentClosest;
   for (let j = 0; j <= unvisitedNodes.length - 1; j++) {
     if (

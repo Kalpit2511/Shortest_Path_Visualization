@@ -12,7 +12,7 @@ export default class Node extends Component {
       onMouseDown,
       onMouseEnter,
       onMouseUp,
-      onDragEnd,
+      // onDragEnd,
       onDoubleClick,
       // onContextMenu,
       row,
@@ -32,12 +32,11 @@ export default class Node extends Component {
         onMouseDown={() => onMouseDown(row, col)}
         onMouseEnter={() => onMouseEnter(row, col)}
         onMouseUp={() => onMouseUp()}
-        onDragEnd={e => onDragEnd(e, row, col)}
+        // onDragEnd={e => onDragEnd(e, row, col)}
         onDoubleClick={() => onDoubleClick(row, col)}
         draggable={true}
         // onContextMenu={() => onContextMenu(row, col)}
-      >
-      </div>
+      ></div>
     );
   }
 }
