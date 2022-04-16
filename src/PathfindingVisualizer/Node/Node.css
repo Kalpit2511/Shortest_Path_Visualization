@@ -49,6 +49,9 @@
 .node-wall {
   background-color: rgb(12, 53, 71);
 }
+.node-weight {
+  background-color: rgb(16, 246, 8);
+}
 
 .node-shortest-path {
   animation-name: shortestPath;

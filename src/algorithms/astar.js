@@ -74,7 +74,8 @@ function updateNode(closestNode, neighbor, targetNode) {
     neighbor.heuristicDistance = manhattanDistance(neighbor, targetNode);
   }
 
-  let distanceToCompare = closestNode.distance + distance[0];
+  let distanceToCompare =
+    closestNode.distance + distance[0] + neighbor.weight - 1; // change for weight
   if (distanceToCompare < neighbor.distance) {
     neighbor.distance = distanceToCompare;
     neighbor.totalDistance = neighbor.distance + neighbor.heuristicDistance;

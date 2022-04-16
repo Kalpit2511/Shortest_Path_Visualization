@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Node from './Node/Node';
 import {dijkstra, getNodesInShortestPathOrder} from '../algorithms/dijkstra';
 import {astar, getNodesInOrder} from '../algorithms/astar';
-import HeaderMenu, {name, nameNode} from './HeaderMenu';
+import HeaderMenu, {name, nameNode, nodeType} from './HeaderMenu';
 import {bfs} from '../algorithms/bfs';
 
 import './PathfindingVisualizer.css';
@@ -33,14 +33,24 @@ export default class PathfindingVisualizer extends Component {
     // let name = document.getElementById(`node-${row}-${col}`).className;
     // console.log(name);
     // console.log(name === 'node node-start');
-    const newGrid = getNewGridWithWallToggled(this.state.grid, row, col);
-    this.setState({grid: newGrid, mouseIsPressed: true});
+    if (nodeType === 'wall') {
+      const newGrid = getNewGridWithWallToggled(this.state.grid, row, col);
+      this.setState({grid: newGrid, mouseIsPressed: true});
+    } else {
+      const newGrid = getNewGridWithWeightToggled(this.state.grid, row, col);
+      this.setState({grid: newGrid, mouseIsPressed: true});
+    }
   }
 
   handleMouseEnter(row, col) {
     if (!this.state.mouseIsPressed) return;
-    const newGrid = getNewGridWithWallToggled(this.state.grid, row, col);
-    this.setState({grid: newGrid});
+    if (nodeType === 'wall') {
+      const newGrid = getNewGridWithWallToggled(this.state.grid, row, col);
+      this.setState({grid: newGrid, mouseIsPressed: true});
+    } else {
+      const newGrid = getNewGridWithWeightToggled(this.state.grid, row, col);
+      this.setState({grid: newGrid, mouseIsPressed: true});
+    }
   }
 
   handleMouseUp() {
@@ -116,7 +126,7 @@ export default class PathfindingVisualizer extends Component {
     const startNode = grid[START_NODE_ROW][START_NODE_COL];
     const finishNode = grid[FINISH_NODE_ROW][FINISH_NODE_COL];
     const visitedNodesInOrder = astar(grid, startNode, finishNode);
-    // console.log(visitedNodesInOrder);
+    console.log(visitedNodesInOrder);
     const nodesInShortestPathOrder = getNodesInOrder(finishNode);
     // console.log(nodesInShortestPathOrder);
     this.animateDijkstra(visitedNodesInOrder, nodesInShortestPathOrder);
@@ -172,14 +182,14 @@ export default class PathfindingVisualizer extends Component {
       <>
         <div className="head">
           <HeaderMenu></HeaderMenu>
-          <div className="count">
-            <h3>Node count: {countNode}</h3>
-          </div>
+        </div>
+        <div className="count">
+          <h3>Node count: {countNode}</h3>
         </div>
         <button
           onClick={() => {
             if (name === 'dijkstra') {
-              this.visualizeBFS();
+              this.visualizeDijkstra();
             } else if (name === 'astar') {
               this.visualizeAstar();
             }
@@ -198,7 +208,7 @@ export default class PathfindingVisualizer extends Component {
             return (
               <div key={rowIdx}>
                 {row.map((node, nodeIdx) => {
-                  const {row, col, isFinish, isStart, isWall} = node;
+                  const {row, col, isFinish, isStart, isWall, isWeight} = node;
                   return (
                     <>
                       <Node
@@ -207,6 +217,7 @@ export default class PathfindingVisualizer extends Component {
                         isFinish={isFinish}
                         isStart={isStart}
                         isWall={isWall}
+                        isWeight={isWeight}
                         mouseIsPressed={mouseIsPressed}
                         onMouseDown={(row, col) =>
                           this.handleMouseDown(row, col)
@@ -249,6 +260,7 @@ const getInitialGrid = () => {
       let node = createNode(col, row);
       node.distance = Infinity;
       node.totalDistance = Infinity;
+      node.weight = 1;
       currentRow.push(node);
     }
     grid.push(currentRow);
@@ -264,6 +276,7 @@ const createNode = (col, row) => {
     isFinish: row === FINISH_NODE_ROW && col === FINISH_NODE_COL,
     distance: Infinity,
     isVisited: false,
+    isWeight: false,
     isWall: false,
     previousNode: null,
   };
@@ -276,6 +289,26 @@ const getNewGridWithWallToggled = (grid, row, col) => {
     ...node,
     isWall: !node.isWall,
   };
+  newGrid[row][col] = newNode;
+  return newGrid;
+};
+
+// weight-15
+// split('-') => ar[1] = 15 => parsInt
+// Add there -> newNode.weight = parseInt(ar[1]);
+
+const getNewGridWithWeightToggled = (grid, row, col) => {
+  // console.log(row + ' ' + col);
+  console.log(document.getElementById(`node-${row}-${col}`).className);
+  const newGrid = grid.slice();
+  const node = newGrid[row][col];
+  const newNode = {
+    ...node,
+    isWeight: !node.isWeight,
+  };
+  // Add here
+  newNode.weight = newNode.isWeight ? 15 : 1;
+  // newNode.weight = 15;
   newGrid[row][col] = newNode;
   return newGrid;
 };
