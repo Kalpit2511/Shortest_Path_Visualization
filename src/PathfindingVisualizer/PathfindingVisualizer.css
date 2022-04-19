@@ -22,24 +22,25 @@ select, .butvizu, .butreset {
 }
 
 .buttonvizu, .buttonrest{
-  padding-top: 1.6%;
+  padding-top: 1.8%;
   padding-right: 30px;
 }
 .nodee,.nodeType{
-  padding-top: 9%;
+  padding-top: 8%;
   padding-right: 30px;
 }
 .algo{
-  padding-top: 9%;
+  padding-top: 8%;
   padding-right: 8%;
 }
 .name{
   color: white;
-  padding-left: 120px;
-  padding-right: 600px;
-  padding-top: 10px;
+  padding-left: 50px;
+  padding-right: 400px;
+  padding-top: 20px;
   /* display: flex; */
   flex-direction: row;
+  font-size: 75%;
 }
 .count{
   color: white;
