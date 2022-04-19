@@ -1,9 +1,9 @@
-.navb{
+/* .navb{
 
     background-color: rgb(239, 175, 175);
     height: 100px;
     
-}
+} */
 .container{
-    display: flex;
+    padding-right: 5px;
 }

@@ -13,6 +13,22 @@
   background-color: green; 
 }
 
+
+.node-wall {
+  background-color: rgb(12, 53, 71);
+}
+
+.node-weight {
+  /*background-color: rgb(16, 246, 8);
+  */ 
+  /* background-color:  rgb(255, 254, 106); */
+  background-image: url(weight.svg) !important;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+}
+
 .node-visited {
   animation-name: visitedAnimation;
   animation-duration: 1.5s;
@@ -46,17 +62,11 @@
   }
 }
 
-.node-wall {
-  background-color: rgb(12, 53, 71);
-}
-.node-weight {
-  background-color: rgb(16, 246, 8);
-}
-
 .node-shortest-path {
+  background-color: rgb(255, 254, 106);
   animation-name: shortestPath;
   animation-duration: 1.5s;
-  animation-timing-function: ease-out;
+  animation-timing-function: linear;
   animation-delay: 0ms;
   animation-direction: alternate;
   animation-iteration-count: 1;
@@ -64,6 +74,12 @@
   animation-play-state: running;
 }
 
+.node-shortest-path.node-weight{
+  background-image: url(weight.svg) !important;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
 @keyframes shortestPath {
   0% {
     transform: scale(0.6);
@@ -79,5 +95,6 @@
     transform: scale(1);
     background-color: rgb(255, 254, 106);
   }
-
 }
+
+

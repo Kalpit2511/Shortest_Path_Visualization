@@ -1,9 +1,9 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import Node from './Node/Node';
-import {dijkstra, getNodesInShortestPathOrder} from '../algorithms/dijkstra';
-import {astar, getNodesInOrder} from '../algorithms/astar';
-import HeaderMenu, {name, nameNode, nodeType} from './HeaderMenu';
-import {bfs} from '../algorithms/bfs';
+import { dijkstra, getNodesInShortestPathOrder } from '../algorithms/dijkstra';
+import { astar, getNodesInOrder } from '../algorithms/astar';
+import HeaderMenu, { name, nameNode, nodeType } from './HeaderMenu';
+import { bfs } from '../algorithms/bfs';
 
 import './PathfindingVisualizer.css';
 
@@ -25,7 +25,7 @@ export default class PathfindingVisualizer extends Component {
 
   componentDidMount() {
     const grid = getInitialGrid();
-    this.setState({grid});
+    this.setState({ grid });
   }
 
   handleMouseDown(row, col) {
@@ -35,10 +35,10 @@ export default class PathfindingVisualizer extends Component {
     // console.log(name === 'node node-start');
     if (nodeType === 'wall') {
       const newGrid = getNewGridWithWallToggled(this.state.grid, row, col);
-      this.setState({grid: newGrid, mouseIsPressed: true});
-    } else {
+      this.setState({ grid: newGrid, mouseIsPressed: true });
+    } else if(nodeType === 'weight') {
       const newGrid = getNewGridWithWeightToggled(this.state.grid, row, col);
-      this.setState({grid: newGrid, mouseIsPressed: true});
+      this.setState({ grid: newGrid, mouseIsPressed: true });
     }
   }
 
@@ -46,15 +46,15 @@ export default class PathfindingVisualizer extends Component {
     if (!this.state.mouseIsPressed) return;
     if (nodeType === 'wall') {
       const newGrid = getNewGridWithWallToggled(this.state.grid, row, col);
-      this.setState({grid: newGrid, mouseIsPressed: true});
+      this.setState({ grid: newGrid, mouseIsPressed: true });
     } else {
       const newGrid = getNewGridWithWeightToggled(this.state.grid, row, col);
-      this.setState({grid: newGrid, mouseIsPressed: true});
+      this.setState({ grid: newGrid, mouseIsPressed: true });
     }
   }
 
   handleMouseUp() {
-    this.setState({mouseIsPressed: false});
+    this.setState({ mouseIsPressed: false });
   }
 
   // handleDragEnd(e, row, col) {
@@ -73,10 +73,10 @@ export default class PathfindingVisualizer extends Component {
     // let name = document.getElementById(`node-${row}-${col}`).className;
     if (nameNode === 'start') {
       const newGrid = getNewGridWithStartToggled(this.state.grid, row, col);
-      this.setState({grid: newGrid});
+      this.setState({ grid: newGrid });
     } else if (nameNode === 'end') {
       const newGrid = getNewGridWithFinishToggled(this.state.grid, row, col);
-      this.setState({grid: newGrid});
+      this.setState({ grid: newGrid });
     }
     // console.log('DOuble click is running.');
     // const newGrid = getNewGridWithStartToggled(this.state.grid, row, col);
@@ -84,8 +84,8 @@ export default class PathfindingVisualizer extends Component {
   }
 
   animateDijkstra(visitedNodesInOrder, nodesInShortestPathOrder) {
-    nodeCount = visitedNodesInOrder.length;
-    this.setState({countNode: nodeCount});
+    nodeCount = nodesInShortestPathOrder.length;
+    this.setState({ countNode: nodeCount });
     for (let i = 1; i <= visitedNodesInOrder.length - 1; i++) {
       if (i === visitedNodesInOrder.length - 1) {
         setTimeout(() => {
@@ -112,7 +112,7 @@ export default class PathfindingVisualizer extends Component {
   }
 
   visualizeDijkstra() {
-    const {grid} = this.state;
+    const { grid } = this.state;
     const startNode = grid[START_NODE_ROW][START_NODE_COL];
     const finishNode = grid[FINISH_NODE_ROW][FINISH_NODE_COL];
     const visitedNodesInOrder = dijkstra(grid, startNode, finishNode);
@@ -121,7 +121,7 @@ export default class PathfindingVisualizer extends Component {
   }
 
   visualizeAstar() {
-    const {grid} = this.state;
+    const { grid } = this.state;
     // console.log('Helllo I am runing...');
     const startNode = grid[START_NODE_ROW][START_NODE_COL];
     const finishNode = grid[FINISH_NODE_ROW][FINISH_NODE_COL];
@@ -134,7 +134,7 @@ export default class PathfindingVisualizer extends Component {
   }
 
   visualizeBFS() {
-    const {grid} = this.state;
+    const { grid } = this.state;
     // console.log('Helllo I am runing...');
     const startNode = grid[START_NODE_ROW][START_NODE_COL];
     const finishNode = grid[FINISH_NODE_ROW][FINISH_NODE_COL];
@@ -172,43 +172,54 @@ export default class PathfindingVisualizer extends Component {
         // console.log(ele.className);
       }
     }
-    this.setState({grid: newGrid, countNode: 0});
+    this.setState({ grid: newGrid, countNode: 0 });
   }
 
   render() {
-    const {grid, mouseIsPressed, countNode} = this.state;
+    const { grid, mouseIsPressed, countNode } = this.state;
 
     return (
       <>
-        <div className="head">
-          <HeaderMenu></HeaderMenu>
+        <div className="container">
+        <span className='name'>
+            <h1>Shortest Pathfinder</h1>
+          </span>
+          <div className="head">
+            <HeaderMenu></HeaderMenu>
+          </div>
+          <div className="buttonvizu">
+            <button className="butvizu"
+              onClick={() => {
+                if (name === 'dijkstra') {
+                  this.visualizeDijkstra();
+                } else if (name === 'astar') {
+                  this.visualizeAstar();
+                }
+              }}>
+              Visualize Algorithm
+            </button>
+          </div>
+          <div className="buttonrest">
+            <button className="butreset"
+              onClick={() => {
+                this.clearBoard();
+              }}>
+              Reset
+            </button>
+          </div>
+          <div className="count">
+            <h3>Node count: {countNode}</h3>
+          </div>
+          
         </div>
-        <div className="count">
-          <h3>Node count: {countNode}</h3>
-        </div>
-        <button
-          onClick={() => {
-            if (name === 'dijkstra') {
-              this.visualizeDijkstra();
-            } else if (name === 'astar') {
-              this.visualizeAstar();
-            }
-          }}>
-          Visualize Algorithm
-        </button>
-        <button
-          onClick={() => {
-            this.clearBoard();
-          }}>
-          Reset
-        </button>
+
 
         <div className="grid">
           {grid.map((row, rowIdx) => {
             return (
               <div key={rowIdx}>
                 {row.map((node, nodeIdx) => {
-                  const {row, col, isFinish, isStart, isWall, isWeight} = node;
+                  const { row, col, isFinish, isStart, isWall, isWeight } = node;
                   return (
                     <>
                       <Node

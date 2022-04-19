@@ -8,66 +8,64 @@ function HeaderMenu() {
   const [selectNodeType, setSelectNodeType] = useState();
   return (
     <>
-      <div className="container">
-        <nav className="navb">
+      <div className="container">  
           {/* <navMenu> */}
-          <div>
-            <form>
+          <div className="algo">
+            {/* <form>
               <label>Algorithm</label>
-            </form>
-            <select
+            </form> */}
+            <select 
               value={selectAlgo}
               onChange={e => {
                 let valueAlgo = e.target.value;
                 setSelectAlgo(valueAlgo);
                 name = valueAlgo;
               }}
-              name="algorithm"
+              required name="algorithm"
               id="algo">
-              <option value=""></option>
+              <option value="" id="ph1">Algorithms</option>
               <option value="dijkstra">Dijkstra</option>
               <option value="astar">Astar</option>
             </select>
             {/* <h1>{selectAlgo}</h1> */}
           </div>
-          <div>
-            <form>
+          <div className="nodee">
+            {/* <form>
               <label>Nodes</label>
-            </form>
-            <select
+            </form> */}
+            <select 
               value={selectNode}
               onChange={e => {
                 let nNode = e.target.value;
                 setSelectNode(nNode);
                 nameNode = nNode;
               }}
-              name="nodes"
+              required name="nodes"
               id="nod">
-              <option value=""></option>
+              <option value="" id="ph2">Nodes</option>
               <option value="start">Start Node</option>
               <option value="end">End Node</option>
             </select>
           </div>
           {/* Wall and Weight node */}
           <div className="nodeType">
-            <form>
+            {/* <form>
               <label>Select Node</label>
-            </form>
-            <select
+            </form> */}
+            <select 
               value={selectNodeType}
               onChange={e => {
                 let nNode = e.target.value;
                 setSelectNodeType(nNode);
                 nodeType = nNode;
               }}
-              name="nodeType"
+              required name="nodeType"
               id="nodes">
-              <option value=""></option>
+              <option value="" id="ph3">Weight node</option>
               <option value="wall">Wall Node</option>
               <option value="weight">Weight Node</option>
             </select>
           </div>
-        </nav>
       </div>
     </>
   );
