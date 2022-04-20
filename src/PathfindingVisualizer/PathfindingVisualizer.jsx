@@ -4,6 +4,7 @@ import { dijkstra, getNodesInShortestPathOrder } from '../algorithms/dijkstra';
 import { astar, getNodesInOrder } from '../algorithms/astar';
 import HeaderMenu, { name, nameNode, nodeType } from './HeaderMenu';
 import { bfs } from '../algorithms/bfs';
+import Nodeinfo from './Nodeinfo';
 
 import './PathfindingVisualizer.css';
 
@@ -208,9 +209,11 @@ export default class PathfindingVisualizer extends Component {
             </button>
           </div>
           <div className="count">
-            <h3>Node count: {countNode}</h3>
-          </div>
-          
+            <p>Node count: {countNode}</p>
+          </div>  
+        </div>
+        <div className="nodinfo">
+          <Nodeinfo></Nodeinfo>
         </div>
 
 

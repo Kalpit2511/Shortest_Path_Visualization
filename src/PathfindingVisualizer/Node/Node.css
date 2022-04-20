@@ -6,11 +6,19 @@
 }
 
 .node-finish {
-  background-color: red;
+  /* background-color: red; */
+  background-image: url(target.svg) !important;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .node-start {
-  background-color: green; 
+  /* background-color: green;  */
+  background-image: url(start.svg) !important;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 
@@ -74,12 +82,6 @@
   animation-play-state: running;
 }
 
-.node-shortest-path.node-weight{
-  background-image: url(weight.svg) !important;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-}
 @keyframes shortestPath {
   0% {
     transform: scale(0.6);

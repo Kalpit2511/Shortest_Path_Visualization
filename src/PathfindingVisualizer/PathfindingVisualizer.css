@@ -1,13 +1,13 @@
 
 .grid {
-  margin: 100px 0 0;
+  margin: 5px 0 0;
 }
 
 
 .container{
   background-color: #294a4c;
   width: auto;
-  height: 100px;
+  height: 60px;
   display: flex;
   /* flex-direction: row-reverse; */
   padding-right: 60px;
@@ -20,32 +20,32 @@ select, .butvizu, .butreset {
   height: 30px;
   border-radius: 20px;
 }
-
+.count{
+  color: white;
+  padding-right: 20px;
+  font-weight: bold;
+}
 .buttonvizu, .buttonrest{
-  padding-top: 1.8%;
+  padding-top: 1.05%;
   padding-right: 30px;
 }
+
 .nodee,.nodeType{
-  padding-top: 8%;
+  padding-top: 4.5%;
   padding-right: 30px;
 }
 .algo{
-  padding-top: 8%;
+  padding-top: 4.5%;
   padding-right: 8%;
 }
 .name{
   color: white;
   padding-left: 50px;
   padding-right: 400px;
-  padding-top: 20px;
   /* display: flex; */
   flex-direction: row;
   font-size: 75%;
 }
-.count{
-  color: white;
-  padding-right: 20px;
-  padding-top:10px;
-}
+
 
 

@@ -1,0 +1,50 @@
+.info{
+    display:flex ;
+    justify-content: center;
+}
+.start, .target, .wall, .visitednode, .shortest, .weight, .unvisited{
+    padding:20px;
+
+}
+.box {
+    float: left;
+    height: 20px;
+    width: 20px;
+    margin-bottom: 22px;
+    border: 1px solid rgb(175, 216, 248);
+    clear: both;
+    margin-left: 25px;
+}
+.boxo{
+    float: left;
+    height: 20px;
+    width: 20px;
+    border: 1px solid rgb(175, 216, 248);
+}
+.bluewhale{
+    background-color: #0C3547;
+}
+.aqua{
+    background-color: rgba(0, 190, 218, 0.75);
+    margin-left: 35px;
+}
+.yellow{
+    background-color: rgb(255, 254, 106);
+    margin-left: 35px;
+}
+
+.blank{
+    margin-left: 35px;
+}
+.orange{
+    background-color: #faa25f;
+    margin-left: 35px;
+}
+.river{
+    background-color: #1a02ba;
+    margin-left: 35px;
+}
+.stones{
+    background-color: #b0a792;
+    margin-left: 35px;
+}
