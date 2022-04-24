@@ -8,64 +8,75 @@ function HeaderMenu() {
   const [selectNodeType, setSelectNodeType] = useState();
   return (
     <>
-      <div className="container">  
-          {/* <navMenu> */}
-          <div className="algo">
-            {/* <form>
+      <div className="container">
+        {/* <navMenu> */}
+        <div className="algo">
+          {/* <form>
               <label>Algorithm</label>
             </form> */}
-            <select 
-              value={selectAlgo}
-              onChange={e => {
-                let valueAlgo = e.target.value;
-                setSelectAlgo(valueAlgo);
-                name = valueAlgo;
-              }}
-              required name="algorithm"
-              id="algo">
-              <option value="" id="ph1">Algorithms</option>
-              <option value="dijkstra">Dijkstra</option>
-              <option value="astar">Astar</option>
-            </select>
-            {/* <h1>{selectAlgo}</h1> */}
-          </div>
-          <div className="nodee">
-            {/* <form>
+          <select
+            value={selectAlgo}
+            onChange={e => {
+              let valueAlgo = e.target.value;
+              setSelectAlgo(valueAlgo);
+              name = valueAlgo;
+            }}
+            required
+            name="algorithm"
+            id="algo">
+            <option value="" id="ph1">
+              Algorithms
+            </option>
+            <option value="dijkstra">Dijkstra</option>
+            <option value="astar">Astar</option>
+            <option value="bfs">BFS</option>
+            <option value="dfs">DFS</option>
+          </select>
+          {/* <h1>{selectAlgo}</h1> */}
+        </div>
+        <div className="nodee">
+          {/* <form>
               <label>Nodes</label>
             </form> */}
-            <select 
-              value={selectNode}
-              onChange={e => {
-                let nNode = e.target.value;
-                setSelectNode(nNode);
-                nameNode = nNode;
-              }}
-              required name="nodes"
-              id="nod">
-              <option value="" id="ph2">Nodes</option>
-              <option value="start">Start Node</option>
-              <option value="end">End Node</option>
-            </select>
-          </div>
-          {/* Wall and Weight node */}
-          <div className="nodeType">
-            {/* <form>
+          <select
+            value={selectNode}
+            onChange={e => {
+              let nNode = e.target.value;
+              setSelectNode(nNode);
+              nameNode = nNode;
+            }}
+            required
+            name="nodes"
+            id="nod">
+            <option value="" id="ph2">
+              Nodes
+            </option>
+            <option value="start">Start Node</option>
+            <option value="end">End Node</option>
+          </select>
+        </div>
+        {/* Wall and Weight node */}
+        <div className="nodeType">
+          {/* <form>
               <label>Select Node</label>
             </form> */}
-            <select 
-              value={selectNodeType}
-              onChange={e => {
-                let nNode = e.target.value;
-                setSelectNodeType(nNode);
-                nodeType = nNode;
-              }}
-              required name="nodeType"
-              id="nodes">
-              <option value="" id="ph3">Weight node</option>
-              <option value="wall">Wall Node</option>
-              <option value="weight">Weight Node</option>
-            </select>
-          </div>
+          <select
+            value={selectNodeType}
+            onChange={e => {
+              let nNode = e.target.value;
+              setSelectNodeType(nNode);
+              nodeType = nNode;
+            }}
+            required
+            name="nodeType"
+            id="nodes">
+            <option value="" id="ph3">
+              Weight node
+            </option>
+            <option value="wall">Wall Node</option>
+            <option value="weight">Weight Node</option>
+          </select>
+        </div>
       </div>
     </>
   );
