@@ -1,8 +1,9 @@
 .info{
     display:flex ;
     justify-content: center;
+    background-color: rgb(241, 254, 255);
 }
-.start, .target, .wall, .visitednode, .shortest, .weight, .unvisited{
+.start, .target, .wall, .visitednode, .shortest, .weight, .unvisited, .middle{
     padding:20px;
 
 }
@@ -47,4 +48,18 @@
 .stones{
     background-color: #b0a792;
     margin-left: 35px;
+}
+.helpbtn{
+    margin-left: 45px;
+    margin-top: 45px;
+    padding-left: 29px;
+}
+#btn-help{
+    flex-direction: row;
+    background-color: #294a4c;
+    border: 2px solid whitesmoke;
+    color: white;
+    width: auto;
+    height: 35px;
+    border-radius: 10px;
 }

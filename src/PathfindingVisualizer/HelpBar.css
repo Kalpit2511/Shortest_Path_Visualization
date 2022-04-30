@@ -1,0 +1,21 @@
+#previousButton, #nextButton, #closebtn{
+    flex-direction: row;
+    background-color: #294a4c;
+    border: 2px solid whitesmoke;
+    color: white;
+    width: auto;
+    height: 35px;
+    border-radius: 10px;
+}
+.btns{
+    display: flex;
+    flex-direction: row;
+    margin: 50px;
+    margin-top: 240px;
+}
+.previousbtn, .nextbtn, .closebutton{
+    padding: 20px;
+}
+.closebutton{
+    margin-left: 710px;
+}

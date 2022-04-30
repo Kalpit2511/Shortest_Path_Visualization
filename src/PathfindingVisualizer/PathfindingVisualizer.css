@@ -46,7 +46,10 @@ select, .butvizu, .butreset {
   flex-direction: row;
   font-size: 75%;
 }
-
+.nodinfo{
+  display:inline;
+  flex-direction: row-reverse;
+}
 .show{
   visibility: visible;
 }
@@ -56,10 +59,10 @@ select, .butvizu, .butreset {
 #helpmenu {
   width: 100vw;
   height: 100vh;
-  background-color: #ffcccc;
-  position: fixed;
+  background-color: #8ebe90;
+  position: fixed; 
   top: 0;
-  left: 0;
+  left: -350px;
   transition: transform .3s
               cubic-bezier(0, .52, 0, 1);
   overflow: scroll;
@@ -74,9 +77,9 @@ select, .butvizu, .butreset {
   overflow: hidden;
   }
 
-/* #helpbar{
+ #helpbar{
 margin-left: 25em;  
-} */
+}
 /* 
 #helpmenu h2 a {
   color: #333;

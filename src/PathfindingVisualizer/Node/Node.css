@@ -27,14 +27,7 @@
 }
 
 .node-weight {
-  /*background-color: rgb(16, 246, 8);
-  */ 
-  /* background-color:  rgb(255, 254, 106); */
-  background-image: url(weight.svg) !important;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-
+  background-color: #faa25f;
 }
 
 .node-visited {
@@ -98,5 +91,6 @@
     background-color: rgb(255, 254, 106);
   }
 }
+
 
 
