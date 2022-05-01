@@ -1,8 +1,8 @@
 import React from 'react';
 import './Nodeinfo.css';
-import {ReactComponent as Start} from './start.svg';
-import {ReactComponent as End} from './target.svg';
-import {ReactComponent as Middle} from './middle.svg';
+import { ReactComponent as Start } from './start.svg';
+import { ReactComponent as End } from './target.svg';
+import { ReactComponent as Middle } from './middle.svg';
 
 function Nodeinfo() {
   return (
@@ -67,15 +67,28 @@ function Nodeinfo() {
             (Value 15)
           </p>
         </span>
-        <div className="helpbtn">
-        <button
-            id="btn-help"
-            onClick={() => {
-              document.getElementById('helpmenu').className = 'show';
-            }}>
-            Help Menu
-          </button>
+        <div className="buttonsHI">
+          <div className="helpbtn">
+            <button
+              id="btn-help"
+              onClick={() => {
+                document.getElementById('helpmenu').className = 'show';
+              }}>
+              Help Menu
+            </button>
+          </div>
+          <div className="infobtn">
+            <button
+              id="btn-info"
+              onClick={() => {
+                document.getElementById('helpmenu').className = 'show';
+              }}>
+              Algorithms<br />
+              Information
+            </button>
+          </div>
         </div>
+
       </div>
     </>
   );

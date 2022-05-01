@@ -2,6 +2,7 @@
     display:flex ;
     justify-content: center;
     background-color: rgb(241, 254, 255);
+    
 }
 .start, .target, .wall, .visitednode, .shortest, .weight, .unvisited, .middle{
     padding:20px;
@@ -51,10 +52,15 @@
 }
 .helpbtn{
     margin-left: 45px;
-    margin-top: 45px;
+    margin-top: 20px;
     padding-left: 29px;
 }
-#btn-help{
+.infobtn{
+    margin-left: 45px;
+    margin-top: 5px;
+    padding-left: 29px;
+}
+#btn-help, #btn-info{
     flex-direction: row;
     background-color: #294a4c;
     border: 2px solid whitesmoke;
