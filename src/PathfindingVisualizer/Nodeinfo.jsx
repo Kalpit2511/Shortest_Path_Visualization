@@ -81,7 +81,7 @@ function Nodeinfo() {
             <button
               id="btn-info"
               onClick={() => {
-                document.getElementById('helpmenu').className = 'show';
+                document.getElementById('algoinfor').className = 'show';
               }}>
               Algorithms<br />
               Information

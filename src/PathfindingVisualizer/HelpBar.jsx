@@ -24,13 +24,16 @@ export default function Infomration() {
           If you want to know how to use this tool press the "Next"
           button below. And press "Close" to go back to visualization.
         </p>
-        <img
+        <div className="photos">
+          <img
           id="mainTutorialImage"
           src={path}
           width={200}
           height={200}
           alt="Not Available!"
         />
+        </div>
+        
       </>
     );
   } else if (pageCount === 2) {
@@ -47,6 +50,7 @@ export default function Infomration() {
           where 90 degree turns have a "cost" of 1 and movements from a node to
           another have a "cost" of 1.
         </p>
+        <div className="photos">
         <img
           id="mainTutorialImage"
           src={points}
@@ -54,6 +58,8 @@ export default function Infomration() {
           height={200}
           alt="Not Available!"
         />
+        </div>
+        
       </>
     );
   } else if (pageCount === 3) {
@@ -202,7 +208,8 @@ export default function Infomration() {
     <div id="helpbar" className="show">
       <h2>How to use?</h2>
       {page}
-      <div>{pageCount}/8</div>
+      
+      <div className="pgcount">{pageCount}/8</div>
       <div className="btns">
         <div className="previousbtn">
           <button id="previousButton" type="button" onClick={pagePrev}>
@@ -219,7 +226,7 @@ export default function Infomration() {
           <button
             id="closebtn"
             onClick={() => {
-              console.log(document.getElementById('helpmenu'));
+              // console.log(document.getElementById('helpmenu'));
               document.getElementById('helpmenu').className = 'hide';
             }}>
             Close

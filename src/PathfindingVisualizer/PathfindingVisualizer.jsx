@@ -9,6 +9,7 @@ import { bfs } from '../algorithms/bfs';
 import Nodeinfo from './Nodeinfo';
 import HelpBar from './HelpBar';
 import './PathfindingVisualizer.css';
+import Algoinfo from './Algoinfo';
 // import {Link} from 'react-router-dom';
 
 let START_NODE_COL = 14;
@@ -226,6 +227,9 @@ export default class PathfindingVisualizer extends Component {
 
         <div id="helpmenu" className="hide">
           <HelpBar />
+        </div>
+        <div id="algoinfor" className="hide">
+          <Algoinfo/>
         </div>
         {/* <HelpBar /> */}
         <div className="grid">
