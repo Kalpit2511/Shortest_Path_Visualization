@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
 import PathfindingVisualizer from './PathfindingVisualizer/PathfindingVisualizer';
-import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
-import HelpBar from './PathfindingVisualizer/HelpBar';
+// import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import {HashRouter as Router, Route, Routes} from 'react-router-dom';
 
 function App() {
   return (
@@ -18,7 +18,6 @@ function App() {
               </>
             }
           />
-          <Route exact path="/helpbar" element={<HelpBar />} />
         </Routes>
       </Router>
     </div>
