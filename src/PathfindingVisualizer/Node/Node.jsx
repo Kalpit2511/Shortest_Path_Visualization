@@ -8,8 +8,11 @@ export default class Node extends Component {
       col,
       isFinish,
       isStart,
+      isMiddle,
       isWall,
       isWeight,
+      isWeight10,
+      isWeight15,
       onMouseDown,
       onMouseEnter,
       onMouseUp,
@@ -26,6 +29,12 @@ export default class Node extends Component {
       ? 'node-wall'
       : isWeight
       ? 'node-weight'
+      : isWeight10
+      ? 'node-weight-10'
+      : isWeight15
+      ? 'node-weight-15'
+      : isMiddle
+      ? 'node-middle'
       : '';
 
     return (

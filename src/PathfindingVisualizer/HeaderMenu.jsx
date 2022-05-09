@@ -71,10 +71,13 @@ function HeaderMenu() {
             name="nodeType"
             id="nodes">
             <option value="" id="ph3">
-              Weight node
+              Node Type
             </option>
             <option value="wall">Wall Node</option>
-            <option value="weight">Weight Node</option>
+            <option value="weight">Weight-5</option>
+            <option value="weight-10">Weight-10</option>
+            <option value="weight-15">Weight-15</option>
+            <option value="middle">Middle Node</option>
           </select>
         </div>
       </div>

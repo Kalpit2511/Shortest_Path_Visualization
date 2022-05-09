@@ -25,9 +25,23 @@
 .node-wall {
   background-color: rgb(12, 53, 71);
 }
+.node-middle{
+  background-image: url(middle.svg) !important;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
 
 .node-weight {
   background-color: #faa25f;
+}
+
+.node-weight-10{
+  background-color: #1a02ba;
+}
+
+.node-weight-15{
+  background-color: #b0a792;
 }
 
 .node-visited {
@@ -39,6 +53,37 @@
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
   animation-play-state: running;
+}
+.node-visited-middle{
+  animation-name: visitedAnimationMiddle;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
+  animation-delay: 0ms;
+  animation-direction: alternate;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+}
+@keyframes visitedAnimationMiddle {
+  0% {
+    transform: scale(0.3);
+    background-color: rgba(66, 57, 0, 0.76);
+    border-radius: 100%;
+  }
+
+  50% {
+    background-color: rgba(217, 90, 17, 0.75);
+  }
+
+  75% {
+    transform: scale(1.2);
+    background-color: rgba(217, 43, 0, 0.75);
+  }
+
+  100% {
+    transform: scale(1);
+    background-color: rgba(125, 25, 0, 0.75);
+  }
 }
 
 @keyframes visitedAnimation {

@@ -18,6 +18,7 @@ export function astar(grid, startNode, targetNode) {
     visitedNodesInOrder.push(closestNode);
     closestNode.isVisited = true;
     if (closestNode === targetNode) return visitedNodesInOrder;
+
     updateNeighbors(closestNode, grid, startNode, targetNode);
   }
 }
@@ -32,7 +33,6 @@ export function getNodesInOrder(finishNode) {
 }
 // Function of closestNode - to sort the nodes by distance
 function sortNodesByDistance(unvisitedNodes) {
-  // console.log(unvisitedNodes);
   let index, currentClosest;
   for (let j = 0; j <= unvisitedNodes.length - 1; j++) {
     if (
@@ -57,12 +57,14 @@ function sortNodesByDistance(unvisitedNodes) {
     unvisitedNodes[index],
     unvisitedNodes[0],
   ];
+  // console.log('unvii ', unvisitedNodes);
   return unvisitedNodes;
 }
 
 function updateNeighbors(closestNode, grid, startNode, targetNode) {
   let neighbors = getUnvisitedNeighbors(closestNode, grid);
   for (let neighbor of neighbors) {
+    // console.log(neighbor);
     updateNode(closestNode, neighbor, targetNode);
   }
 }
