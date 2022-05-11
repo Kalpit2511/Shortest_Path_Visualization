@@ -89,9 +89,9 @@ export default class PathfindingVisualizer extends Component {
   animateDijkstra(visitedNodesInOrder, nodesInShortestPathOrder) {
     nodeCount = nodesInShortestPathOrder.length;
     const start_row = START_NODE_ROW;
-        const start_col = START_NODE_COL;
-        const end_row = FINISH_NODE_ROW;
-        const end_col = FINISH_NODE_COL;
+    const start_col = START_NODE_COL;
+    const end_row = FINISH_NODE_ROW;
+    const end_col = FINISH_NODE_COL;
     this.setState({countNode: nodeCount});
     for (let i = 0; i <= visitedNodesInOrder.length - 1; i++) {
       if (i === visitedNodesInOrder.length - 1) {
@@ -102,14 +102,11 @@ export default class PathfindingVisualizer extends Component {
       }
       setTimeout(() => {
         const node = visitedNodesInOrder[i];
-        
+
         if (node.row === start_row && node.col === start_col) {
           document.getElementById(`node-${node.row}-${node.col}`).className =
             'node node-visited node-start';
-        } else if (
-          node.row === end_row &&
-          node.col === end_col
-        ) {
+        } else if (node.row === end_row && node.col === end_col) {
           document.getElementById(`node-${node.row}-${node.col}`).className =
             'node node-visited node-finish';
         } else {
@@ -122,27 +119,21 @@ export default class PathfindingVisualizer extends Component {
 
   animateShortestPath(nodesInShortestPathOrder) {
     const start_row = START_NODE_ROW;
-        const start_col = START_NODE_COL;
-        const end_row = FINISH_NODE_ROW;
-        const end_col = FINISH_NODE_COL;
-        const middle_row = MIDDLE_NODE_ROW;
-        const middle_col = MIDDLE_NODE_COL;
+    const start_col = START_NODE_COL;
+    const end_row = FINISH_NODE_ROW;
+    const end_col = FINISH_NODE_COL;
+    const middle_row = MIDDLE_NODE_ROW;
+    const middle_col = MIDDLE_NODE_COL;
     for (let i = 0; i < nodesInShortestPathOrder.length; i++) {
       setTimeout(() => {
         const node = nodesInShortestPathOrder[i];
         if (node.row === start_row && node.col === start_col) {
           document.getElementById(`node-${node.row}-${node.col}`).className =
             'node node-shortest-path node-start';
-        } else if (
-          node.row === end_row &&
-          node.col === end_col
-        ) {
+        } else if (node.row === end_row && node.col === end_col) {
           document.getElementById(`node-${node.row}-${node.col}`).className =
             'node node-shortest-path node-finish';
-        } else if (
-          node.row === middle_row &&
-          node.col === middle_col
-        ) {
+        } else if (node.row === middle_row && node.col === middle_col) {
           document.getElementById(`node-${node.row}-${node.col}`).className =
             'node node-shortest-path node-middle';
         } else {
@@ -236,6 +227,7 @@ export default class PathfindingVisualizer extends Component {
         }
       }, 10 * i);
     }
+    this.setState({countNode: nodesInShortestPathOrder.length});
   }
 
   visualizeAstar() {
@@ -254,20 +246,6 @@ export default class PathfindingVisualizer extends Component {
     const visitedNodesInOrder = bfs(grid, startNode, finishNode, name);
     const nodesInShortestPathOrder = getNodesInOrder(finishNode);
     this.animateDijkstra(visitedNodesInOrder, nodesInShortestPathOrder);
-  }
-
-  clearBoardFor() {
-    const newGrid = this.state.grid;
-
-    for (let i = 0; i < newGrid.length; i++) {
-      for (let j = 0; j < newGrid[0].length; j++) {
-        newGrid[i][j].isVisited = false;
-        // newGrid[i][j].isWall = false;
-        newGrid[i][j].distance = Infinity;
-        newGrid[i][j].previousNode = null;
-      }
-    }
-    this.setState({grid: newGrid, countNode: 0});
   }
 
   clearBoard() {
