@@ -3,6 +3,9 @@ import path from './photos/path.png';
 // import algo from './photos/algo.png';
 import algorithm from './photos/algorithm.png';
 import points from './photos/points.png';
+import Weights from './photos/Weights.png';
+import NWnodes from './photos/NWnodes.png';
+import luck from './photos/luck.png';
 // import spath from './photos/spath.png';
 import './HelpBar.css';
 let page;
@@ -66,19 +69,19 @@ export default function Infomration() {
     page = (
       <>
         <h3>Picking an algorithm</h3>
-        <h6>Choose an algorithm from the "Algorithms" drop-down menu.</h6>
+        <h4>Choose an algorithm from the "Algorithms" drop-down menu.</h4>
         <p>
           Note that some algorithms are{' '}
           <i>
-            <b>unweighted</b>
+            <b>unweighted </b>
           </i>
           , while others are{' '}
           <i>
-            <b>weighted</b>
+            <b>weighted </b>
           </i>
           . Unweighted algorithms do not take turns or weight nodes into
           account, whereas weighted ones do. Additionally, not all algorithms
-          guarantee the shortest path.{' '}
+          guarantee the shortest path like DFS which is the worst case in finding the shortest path.{' '}
         </p>
         <img id="secondTutorialImage" src={algorithm} alt="Not Available!" />
       </>
@@ -87,7 +90,7 @@ export default function Infomration() {
     page = (
       <>
         <h3>Meet the algorithms</h3>
-        <h6>Not all algorithms are created equal.</h6>
+        <h4>Not all algorithms are created equal.</h4>
         <ul>
           <li>
             <b>Dijkstra's Algorithm</b>: the Greedy of pathfinding
@@ -113,11 +116,11 @@ export default function Infomration() {
     page = (
       <>
         <h3>Adding walls and weights</h3>
-        <h6>
+        <h4>
           Select the 'Wall Node' from the given weigth nodes dropdown to add the wall in the
           grid. While you can add the different weight nodes as per the weight
           by selecting 'Weight Node' from the dropdown.
-        </h6>
+        </h4>
         <p>
           Walls are impenetrable, meaning that a path cannot cross through them.
           Weights, however, are not impassable. They are simply more "costly" to
@@ -125,18 +128,22 @@ export default function Infomration() {
           nodes with different costs, i.e. 5, 10, 15.
         </p>
         {/* <img id="secondTutorialImage" src={} /> */}
+        <img id="secondTutorialImage" src={Weights} alt="Not Available!" />
       </>
     );
   } else if (pageCount === 6) {
     page = (
       <>
-        <h3>Adding a Middle Node</h3>
-        <h6>Click the "Add Middle Node" button.</h6>
+        <h3>Adding a Non-weighted Node</h3>
+        <h4>These nodes are start node, End node and the middle node</h4>
         <p>
+          START node is where the path starts and ends it on the END node. The position of these two nodes can be changed by double clicking on any node.<br/> 
+          <br/> 
           Adding a Middle node will change the course of the chosen algorithm.
           In other words, the algorithm will first look for the middle node (in
           an effort to diffuse it) and will then look for the target node.
         </p>
+        <img id="secondTutorialImage" src={NWnodes} alt="Not Available!" />
         {/* <img id="secondTutorialImage" src="public/styling/bomb.png" /> */}
       </>
     );
@@ -158,12 +165,13 @@ export default function Infomration() {
     page = (
       <>
         <h3>Visualizing and more</h3>
-        <h6>
+        <h4>
           Use the navbar buttons to visualize algorithms and to do other stuff!
-        </h6>
+        </h4>
         <p>
           You can clear the current path, clear walls and weights, all from the navbar.
-          If you want to access this Helpdesk again, click on "How to Use" in the top left corner of your screen.
+          If you want to access this Helpdesk again, click on "Help Menu" in the top left corner of your screen and to know about the Algorithms click on the "Algoriothm Information".
+          It also gives the basic visuals of the nodes.
         </p>
         {/* <img id="secondTutorialImage" src="public/styling/navbar.png" /> */}
       </>
@@ -177,6 +185,8 @@ export default function Infomration() {
           visualization tool as I had building it! */}
           This Visualizaion will help you to learn shortest algorithms deeply and also fun to playing around with this visualization tool.
         </h3>
+        <img id="secondTutorialImage" src={luck} width={200}
+          height={250} alt="Not Available!" />
         {/* <p>
           If you want to see the source code for this application, check out my{' '}
           <a href="https://github.com/ayushkaneria11/Shortest-Path-Visualization.git">

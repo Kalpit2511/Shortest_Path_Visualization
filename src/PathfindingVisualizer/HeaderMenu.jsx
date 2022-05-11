@@ -53,6 +53,7 @@ function HeaderMenu() {
             </option>
             <option value="start">Start Node</option>
             <option value="end">End Node</option>
+            <option value="middle">Middle Node</option>
           </select>
         </div>
         {/* Wall and Weight node */}
@@ -71,13 +72,13 @@ function HeaderMenu() {
             name="nodeType"
             id="nodes">
             <option value="" id="ph3">
-              Node Type
+              Constraint
             </option>
             <option value="wall">Wall Node</option>
             <option value="weight">Weight-5</option>
             <option value="weight-10">Weight-10</option>
             <option value="weight-15">Weight-15</option>
-            <option value="middle">Middle Node</option>
+           
           </select>
         </div>
       </div>
