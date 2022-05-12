@@ -258,9 +258,16 @@ export default class PathfindingVisualizer extends Component {
         );
         if (
           ele.className === 'node node-visited' ||
+          ele.className === 'node node-visited-middle' ||
           ele.className === 'node node-shortest-path'
         ) {
           ele.className = 'node';
+        } else if (ele.className === 'node node-shortest-path node-start') {
+          ele.className = 'node node-start';
+        } else if (ele.className === 'node node-shortest-path node-finish') {
+          ele.className = 'node node-finish';
+        } else if (ele.className === 'node node-shortest-path node-middle') {
+          ele.className = 'node node-middle';
         }
         newGrid[i][j].isVisited = false;
         // newGrid[i][j].isWall = false;

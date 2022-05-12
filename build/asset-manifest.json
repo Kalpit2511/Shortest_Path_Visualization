@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Shortest-Path-Visualization/static/css/main.f19746f7.css",
-    "main.js": "/Shortest-Path-Visualization/static/js/main.b6506fa1.js",
+    "main.js": "/Shortest-Path-Visualization/static/js/main.28e56281.js",
     "static/media/luck.png": "/Shortest-Path-Visualization/static/media/luck.b1815d1d63542bd25cdb.png",
     "static/media/points.png": "/Shortest-Path-Visualization/static/media/points.ebcac92b89d4b4ba8697.png",
     "index.html": "/Shortest-Path-Visualization/index.html",
@@ -9,10 +9,10 @@
     "static/media/target.svg": "/Shortest-Path-Visualization/static/media/target.f5d93a548762671a2c15600f39182a52.svg",
     "static/media/start.svg": "/Shortest-Path-Visualization/static/media/start.1be3a8e68117a3656d61e66b2e5e6800.svg",
     "main.f19746f7.css.map": "/Shortest-Path-Visualization/static/css/main.f19746f7.css.map",
-    "main.b6506fa1.js.map": "/Shortest-Path-Visualization/static/js/main.b6506fa1.js.map"
+    "main.28e56281.js.map": "/Shortest-Path-Visualization/static/js/main.28e56281.js.map"
   },
   "entrypoints": [
     "static/css/main.f19746f7.css",
-    "static/js/main.b6506fa1.js"
+    "static/js/main.28e56281.js"
   ]
 }
