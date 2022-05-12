@@ -67,6 +67,16 @@ export default class PathfindingVisualizer extends Component {
     } else if (nodeType === 'weight') {
       const newGrid = getNewGridWithWeightToggled(this.state.grid, row, col);
       this.setState({grid: newGrid, mouseIsPressed: true});
+    } else if (nodeType === 'weight-10') {
+      const newGrid = getNewGridWithWeightTenToggled(this.state.grid, row, col);
+      this.setState({grid: newGrid, mouseIsPressed: true});
+    } else if (nodeType === 'weight-15') {
+      const newGrid = getNewGridWithWeightFifteenToggled(
+        this.state.grid,
+        row,
+        col,
+      );
+      this.setState({grid: newGrid, mouseIsPressed: true});
     } else if (nameNode === 'middle') {
       const newGrid = getNewGridWithMiddleToggled(this.state.grid, row, col);
       this.setState({grid: newGrid, mouseIsPressed: true});
